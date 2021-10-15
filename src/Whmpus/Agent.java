@@ -67,7 +67,7 @@ public class Agent {
         	        	
         	System.out.println();
         	
-        	goBackToStart();
+        	//goBackToStart();
         	  	
         }
         
@@ -160,76 +160,76 @@ public class Agent {
     	
     }
     
-    void goBackToStart() {
-    	
-    	Coordinates position = popMove();
-    	position.printPosition();
-    	    	
-    	while(moves.size() > 0) {
-    		
-    		findSouthWestTiles(position);
-    		
-    		position = popMove();
-    		
-    		moveList.put(position.creatDirectionJSON());
-
-    		if (position.equals(new Coordinates(1,1))) {
-    			return;
-    		}
-    	}
-    }
+//    void goBackToStart() {
+//
+//    	Coordinates position = popMove();
+//    	position.printPosition();
+//
+//    	while(moves.size() > 0) {
+//
+//    		findSouthWestTiles(position);
+//
+//    		position = popMove();
+//
+//    		moveList.put(position.creatDirectionJSON());
+//
+//    		if (position.equals(new Coordinates(1,1))) {
+//    			return;
+//    		}
+//    	}
+//    }
     
     
-    private void findSouthWestTiles(Coordinates playerPosition) {
-    	
-    	System.out.print("Finding adjecent of: ");
-    	playerPosition.printPosition();
-    	System.out.println();
-    	
-    	int index;
-    	for(index = moves.size() - 1; index >= 0; index -= 1 ) {
-    		
-    		Coordinates possibleShortcutTile = moves.get(index);
-    		
-    		if((possibleShortcutTile.getRow() == playerPosition.getRow() - 1 )&& (possibleShortcutTile.getCol() == playerPosition.getCol())) {
-        		System.out.print("Got South: ");
-    			possibleShortcutTile.printPosition();
-    			System.out.println();
-    			
-    			break;
-    		} else if ((possibleShortcutTile.getCol() == playerPosition.getCol() - 1) && (possibleShortcutTile.getRow() == playerPosition.getRow())) {
-        		System.out.print("Got West: ");
-    			possibleShortcutTile.printPosition();
-    			System.out.println();
-    			
-    			break;
-    		}	
-    	}
-    	
-    	for (int remIndex = moves.size() - 1; remIndex > index; remIndex -= 1) {
-    		
-    		moves.remove(remIndex);
-       	}
-        	
-    }
+//    private void findSouthWestTiles(Coordinates playerPosition) {
+//
+//    	System.out.print("Finding adjecent of: ");
+//    	playerPosition.printPosition();
+//    	System.out.println();
+//
+//    	int index;
+//    	for(index = moves.size() - 1; index >= 0; index -= 1 ) {
+//
+//    		Coordinates possibleShortcutTile = moves.get(index);
+//
+//    		if((possibleShortcutTile.getRow() == playerPosition.getRow() - 1 )&& (possibleShortcutTile.getCol() == playerPosition.getCol())) {
+//        		System.out.print("Got South: ");
+//    			possibleShortcutTile.printPosition();
+//    			System.out.println();
+//
+//    			break;
+//    		} else if ((possibleShortcutTile.getCol() == playerPosition.getCol() - 1) && (possibleShortcutTile.getRow() == playerPosition.getRow())) {
+//        		System.out.print("Got West: ");
+//    			possibleShortcutTile.printPosition();
+//    			System.out.println();
+//
+//    			break;
+//    		}
+//    	}
+//
+//    	for (int remIndex = moves.size() - 1; remIndex > index; remIndex -= 1) {
+//
+//    		moves.remove(remIndex);
+//       	}
+//
+//    }
     
-    private Coordinates popMove() {
-    	Coordinates topMove = moves.remove(moves.size() - 1);
-    	return topMove;
-    }
+//    private Coordinates popMove() {
+//    	Coordinates topMove = moves.remove(moves.size() - 1);
+//    	return topMove;
+//    }
     
     private Coordinates backTrack() {
-    	   
+
     	if(moves.size() > 0) {
-    		moves.remove(moves.size() - 1); 
-	     
+    		moves.remove(moves.size() - 1);
+
 	        Coordinates basePoint = new Coordinates(moves.get(moves.size() - 1));
-       
+
 	        return basePoint;
     	}
-    	
+
     	return null;
-        
+
     }
        
     private Coordinates	locateWhmpus() {

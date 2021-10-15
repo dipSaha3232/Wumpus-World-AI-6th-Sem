@@ -14,8 +14,8 @@ class World {
 	
 	
 
-    private int rowCount = 4;
-    private int colCount = 4;
+    private int rowCount = 10;
+    private int colCount = 10;
 
     private boolean isWhmpusDead = false;
     private boolean isGoldTaken = false;
@@ -38,7 +38,7 @@ class World {
 //   };
   //World 3
   private Coordinates whmpusPosition = new Coordinates(1,3);
-  private Coordinates goldPosition = new Coordinates(4,3);
+  private Coordinates goldPosition = new Coordinates(4,1);
   private Coordinates[] pitPositions = {
       new Coordinates(3 ,1),
       new Coordinates(4,4)
