@@ -37,8 +37,8 @@ class World {
 //       new Coordinates(4,4)
 //   };
   //World 3
-  private Coordinates whmpusPosition = new Coordinates(1,3);
-  private Coordinates goldPosition = new Coordinates(4,1);
+  private Coordinates whmpusPosition = new Coordinates(7,3);
+  private Coordinates goldPosition = new Coordinates(6,7);
   private Coordinates[] pitPositions = {
       new Coordinates(3 ,1),
       new Coordinates(4,4)

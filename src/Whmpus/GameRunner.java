@@ -18,7 +18,7 @@ public class GameRunner {
 	
 			Desktop d = Desktop.getDesktop();
 			try {
-				File gameUI = new File("D:\\IIT Tasks\\Wumpus-World-AI-master\\Wumpus.html");
+				File gameUI = new File("D:\\xampp\\htdocs\\Wumpus.html");
 				d.browse(gameUI.toURI());
 				
 			} catch (IOException e) {
